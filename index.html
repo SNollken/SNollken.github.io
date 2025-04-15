@@ -161,6 +161,16 @@
       </div>
       <p class="resultado" id="res-findlast"></p>
     </div>
+
+    <!-- findLastIndex -->
+    <div class="bloco">
+      <p class="descricao">Encontre o último índice com <code>findLastIndex()</code>:</p>
+      <div class="linha">
+        <input type="text" id="input-findLastindex" placeholder="Insira um valor" class="input-texto">
+        <button class="botao" id="btn-findLastindex">Executar</button>
+      </div>
+      <p class="resultado" id="res-findLastindex"></p>
+    </div>
   </div>
 
   <script>
@@ -215,6 +225,11 @@
       const valor = document.getElementById('input-findlast').value.trim();
       const resultado = lista.findLast(item => item === valor);
       exibirResultado('res-findlast', resultado ? `Último valor: ${resultado}` : 'Nada encontrado com findLast()');
+    });
+    document.getElementById('btn-findLastindex').addEventListener('click', () => {
+      const valor = document.getElementById('input-findLastindex').value.trim();
+      const resultado = lista.findLastIndex(item => item === valor);
+      exibirResultado('res-findLastindex', resultado !== -1 ? `Último índice encontrado: ${resultado}` : 'Valor não encontrado com findLastIndex()');
     });
   </script>
 </body>
